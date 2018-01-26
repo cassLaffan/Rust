@@ -10,7 +10,9 @@ fn main() {
     println!("_|_|_");
     println!("_|_|_");
 
-    let mut gameArray : [i32; 9];//keeps track of whats happening
+    let mut rowOneArray : [i32; 3] = [0, 0, 0];
+    let mut rowTwoArray : [i32; 3] = [0, 0, 0];
+    let mut rowThreeArray : [i32; 3] = [0, 0, 0];//keeps track of whats happening
     let mut winState = false;
 
     loop{
@@ -19,10 +21,18 @@ fn main() {
         println!("Row: ");
         let mut rowOne = String::new();
         io::stdin().read_line(&mut rowOne).expect("Failed to read input.");
+        let rowChoice = rowOne.parse::<i32>().unwrap();
+
+        if(rowChoice == 1){
+
+        }
 
         println!("Column: ");
         let mut colOne = String::new();
         io::stdin().read_line(&mut colOne).expect("Failed to read input.");
+        let colChoice = colOne.parse::<i32>().unwrap();
+
+
 
         if(winState){
             println!("Player one wins!");
