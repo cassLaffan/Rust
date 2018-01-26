@@ -1,0 +1,6 @@
+[package]
+name = "x_and_o"
+version = "0.1.0"
+authors = ["cassandra <poisonberryvines@gmail.com>"]
+
+[dependencies]
