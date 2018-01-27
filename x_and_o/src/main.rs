@@ -1,6 +1,9 @@
 use std::io;
 use std::cmp::Ordering;
 
+
+
+
 fn main() {
     //and attempt at a simple game of xs and os
     //learning goal: try and make a turn based game
@@ -21,18 +24,20 @@ fn main() {
         println!("Row: ");
         let mut rowOne = String::new();
         io::stdin().read_line(&mut rowOne).expect("Failed to read input.");
-        let rowChoice = rowOne.parse::<i32>().unwrap();
+        let rowChoice: i32 = rowOne.parse().unwrap_or_default();
 
-        if(rowChoice == 1){
-
+        if(rowChoice < 1 || rowChoice > 3){
+            println!("Please choose a row between 1 and 3.");
         }
 
         println!("Column: ");
         let mut colOne = String::new();
         io::stdin().read_line(&mut colOne).expect("Failed to read input.");
-        let colChoice = colOne.parse::<i32>().unwrap();
+        let colChoice: i32 = colOne.parse().unwrap_or_default();
 
-
+        if(colChoice < 1 || colChoice > 3){
+            println!("Please choose a column between 1 and 3.");
+        }
 
         if(winState){
             println!("Player one wins!");
