@@ -1,8 +1,13 @@
 use std::io;
 use std::cmp::Ordering;
 
-
-
+//this function will loop so long as a player's input is not valid
+fn turn_loop() -> bool{
+    loop{
+        
+    }
+    return true;
+}
 
 fn main() {
     //and attempt at a simple game of xs and os
