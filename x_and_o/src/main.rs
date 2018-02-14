@@ -4,7 +4,7 @@ use std::cmp::Ordering;
 //this function will loop so long as a player's input is not valid
 fn turn_loop() -> bool{
     loop{
-        
+
     }
     return true;
 }
@@ -25,23 +25,37 @@ fn main() {
 
     loop{
         println!("Player one, please choose a row from 1 to 3 and then a column from 1 to 3.");
+        let colChoiceOne: i32;
+        let rowChoiceOne: i32;
 
-        println!("Row: ");
-        let mut rowOne = String::new();
-        io::stdin().read_line(&mut rowOne).expect("Failed to read input.");
-        let rowChoice: i32 = rowOne.parse().unwrap_or_default();
+        loop{
+            println!("Row: ");
+            let mut rowOne = String::new();
+            io::stdin().read_line(&mut rowOne).expect("Failed to read input.");
+            rowChoiceOne = rowOne.parse().unwrap_or_default();
 
-        if(rowChoice < 1 || rowChoice > 3){
-            println!("Please choose a row between 1 and 3.");
+            if(rowChoiceOne < 1 || rowChoiceOne > 3){
+                println!("Please choose a row between 1 and 3.");
+            }
+            else{
+                break;
+            }
         }
 
-        println!("Column: ");
-        let mut colOne = String::new();
-        io::stdin().read_line(&mut colOne).expect("Failed to read input.");
-        let colChoice: i32 = colOne.parse().unwrap_or_default();
 
-        if(colChoice < 1 || colChoice > 3){
-            println!("Please choose a column between 1 and 3.");
+        //will loop until the player enters a correct input
+        loop{
+            println!("Column: ");
+            let mut colOne = String::new();
+            io::stdin().read_line(&mut colOne).expect("Failed to read input.");
+            colChoiceOne = colOne.parse().unwrap_or_default();
+
+            if(colChoiceOne < 1 || colChoiceOne > 3){
+                println!("Please choose a column between 1 and 3.");
+            }
+            else{
+                break;
+            }
         }
 
         if(winState){
@@ -50,19 +64,42 @@ fn main() {
         }
 
         println!("Player two, please choose a row from 1 to 3 and then a column from 1 to 3.");
+        let colChoiceTwo: i32;
+        let rowChoiceTwo: i32;
 
-        println!("Row: ");
-        let mut rowTwo = String::new();
-        io::stdin().read_line(&mut rowTwo).expect("Failed to read input.");
+        loop{
+            println!("Row: ");
+            let mut rowTwo = String::new();
+            io::stdin().read_line(&mut rowTwo).expect("Failed to read input.");
+            rowChoiceTwo: = rowTwo.parse().unwrap_or_default();
 
-        println!("Column: ");
-        let mut colTwo = String::new();
-        io::stdin().read_line(&mut colTwo).expect("Failed to read input.");
+            if(rowChoiceTwo < 1 || rowChoiceTwo > 3){
+                println!("Please choose a row between 1 and 3.");
+            }
+            else{
+                break;
+            }
+        }
 
+        loop{
+            println!("Column: ");
+            let mut colTwo = String::new();
+            io::stdin().read_line(&mut colTwo).expect("Failed to read input.");
+            colChoiceTwo: = colOne.parse().unwrap_or_default();
+
+            if(colChoiceTwo < 1 || colChoiceTwo > 3){
+                println!("Please choose a column between 1 and 3.");
+            }
+            else{
+                break;
+            }
+
+        }
         if(winState){
             println!("Player one wins!");
             break;
         }
+
     }
 
 }
