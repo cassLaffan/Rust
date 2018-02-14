@@ -25,8 +25,8 @@ fn main() {
 
     loop{
         println!("Player one, please choose a row from 1 to 3 and then a column from 1 to 3.");
-        let colChoiceOne: i32;
-        let rowChoiceOne: i32;
+        let mut colChoiceOne: i32;
+        let mut rowChoiceOne: i32;
 
         loop{
             println!("Row: ");
@@ -64,14 +64,14 @@ fn main() {
         }
 
         println!("Player two, please choose a row from 1 to 3 and then a column from 1 to 3.");
-        let colChoiceTwo: i32;
-        let rowChoiceTwo: i32;
+        let mut colChoiceTwo: i32;
+        let mut rowChoiceTwo: i32;
 
         loop{
             println!("Row: ");
             let mut rowTwo = String::new();
             io::stdin().read_line(&mut rowTwo).expect("Failed to read input.");
-            rowChoiceTwo: = rowTwo.parse().unwrap_or_default();
+            rowChoiceTwo = rowTwo.parse().unwrap_or_default();
 
             if(rowChoiceTwo < 1 || rowChoiceTwo > 3){
                 println!("Please choose a row between 1 and 3.");
@@ -85,7 +85,7 @@ fn main() {
             println!("Column: ");
             let mut colTwo = String::new();
             io::stdin().read_line(&mut colTwo).expect("Failed to read input.");
-            colChoiceTwo: = colOne.parse().unwrap_or_default();
+            colChoiceTwo = colTwo.parse().unwrap_or_default();
 
             if(colChoiceTwo < 1 || colChoiceTwo > 3){
                 println!("Please choose a column between 1 and 3.");
