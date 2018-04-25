@@ -1,6 +1,10 @@
 use std::io;
 use std::cmp::Ordering;
 
+fn set_playing_board() -> void{
+    
+}
+
 //this function will loop so long as a player's input is not valid
 fn turn_loop_row(rdr: &io::Stdin) -> i32{
     let mut row_choice: i32;
@@ -48,6 +52,10 @@ fn turn_loop_column(rdr: &io::Stdin) -> i32{
         }
     }
     return col_choice;
+}
+
+fn find_win_state() -> bool{
+
 }
 
 fn main() {
