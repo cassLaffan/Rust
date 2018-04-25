@@ -3,38 +3,40 @@ use std::cmp::Ordering;
 
 //this function will loop so long as a player's input is not valid
 fn turn_loop_row() -> i32{
+    let mut rowChoice: i32;
     loop{
         println!("Row: ");
-        let mut rowOne = String::new();
-        io::stdin().read_line(&mut rowOne).expect("Failed to read input.");
-        rowChoiceOne = rowOne.parse().unwrap_or_default();
+        let mut row = String::new();
+        io::stdin().read_line(&mut row).expect("Failed to read input.");
+        rowChoice = row.parse().unwrap_or_default();
 
-        if(rowChoiceOne < 1 || rowChoiceOne > 3){
+        if(rowChoice < 1 || rowChoice > 3){
             println!("Please choose a row between 1 and 3.");
         }
         else{
             break;
         }
     }
-    return true;
+    return rowChoice;
 }
 
 //this function will loop so long as a player's input is not valid
 fn turn_loop_column() -> i32{
+    let mut colChoice: i32;
     loop{
         println!("Column: ");
-        let mut colOne = String::new();
-        io::stdin().read_line(&mut colOne).expect("Failed to read input.");
-        colChoiceOne = colOne.parse().unwrap_or_default();
+        let mut col = String::new();
+        io::stdin().read_line(&mut col).expect("Failed to read input.");
+        colChoice = col.parse().unwrap_or_default();
 
-        if(colChoiceOne < 1 || colChoiceOne > 3){
+        if(colChoice < 1 || colChoice > 3){
             println!("Please choose a column between 1 and 3.");
         }
         else{
             break;
         }
     }
-    return true;
+    return colChoice;
 }
 
 fn main() {
