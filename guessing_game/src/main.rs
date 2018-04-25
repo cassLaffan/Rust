@@ -25,7 +25,7 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };//if parse cannot turn the string into a number, it will return an error
-        //but since you have it feel into continue, it just skips over the error and asks you again for a secret_number
+        //but since you have it feed into continue, it just skips over the error and asks you again for a secret_number
 
         match guess.cmp(&secret_number){
             Ordering::Less      => println!("Too small!"),
