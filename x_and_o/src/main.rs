@@ -1,8 +1,17 @@
 use std::io;
 use std::cmp::Ordering;
 
-fn set_playing_board() -> void{
-    
+fn set_playing_board(board: &[mut [mut i32, ..3], ..3], turn: i32) -> void{
+
+    if(turn == 0){
+        println!("_|_|_");
+        println!("_|_|_");
+        println!("_|_|_");
+    }
+    else{
+        
+    }
+
 }
 
 //this function will loop so long as a player's input is not valid
@@ -64,13 +73,12 @@ fn main() {
     //learning goal: try and make a turn based game
     println!("Tic Tac Toe!");
     println!("Rules: Both players must attempt to put three of their assigned symbol in a straight line. X goes first.");
-    println!("_|_|_");
-    println!("_|_|_");
-    println!("_|_|_");
+    let row_one_array : [mut i32; 3] = [0, 0, 0];
+    let row_two_array : [mut i32; 3] = [0, 0, 0];
+    let row_three_array : [mut i32; 3] = [0, 0, 0];
 
-    let mut row_one_array : [i32; 3] = [0, 0, 0];
-    let mut row_two_rray : [i32; 3] = [0, 0, 0];
-    let mut row_three_array : [i32; 3] = [0, 0, 0];//keeps track of whats happening
+    let state : [mut [mut i32, ..3], ..3] = [row_one_array, row_two_array, row_three_array];
+
     let mut win_state = false;
 
     loop{
